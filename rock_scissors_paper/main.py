@@ -44,6 +44,7 @@ def choose_figure():
     print("1. rock")
     print("2. scissors")
     print("3. paper")
+    print("4. end game")
     try:
         user_choice = int(input())
     except:
@@ -56,39 +57,35 @@ def compare_results(user_choice, computer_choice):
     if user_choice == computer_choice:
         print_figures(user_choice, computer_choice)
         print("Draw!\nTry again...\n")
-        return 1
     elif user_choice == 1 and computer_choice == 2:
         print_figures(user_choice, computer_choice)
         print("You win!")
-        return 0
     elif user_choice == 1 and computer_choice == 3:
         print_figures(user_choice, computer_choice)
         print("You lose.\nTry again...\n")
-        return 1
     elif user_choice == 2 and computer_choice == 1:
         print_figures(user_choice, computer_choice)
         print("You lose.\nTry again...\n")
-        return 1
     elif user_choice == 2 and computer_choice == 3:
         print_figures(user_choice, computer_choice)
         print("You win!")
-        return 0
     elif user_choice == 3 and computer_choice == 1:
         print_figures(user_choice, computer_choice)
         print("You win!")
-        return 0
     elif user_choice == 3 and computer_choice == 2:
         print_figures(user_choice, computer_choice)
         print("You lose.\nTry again...\n")
-        return 1
     else:
         print("You wrote invalid number!. You lose.\nTry again...\n")
-        return 1
+
 
 
 x = 1
 while x == 1:
     user_choice, computer_choice = choose_figure()
-    x = compare_results(user_choice, computer_choice)
+    if user_choice == 4:
+        x = 0
+    else:
+        compare_results(user_choice, computer_choice)
 
 
