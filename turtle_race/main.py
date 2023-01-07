@@ -9,6 +9,7 @@ def move_forward(turtle_object):
 
 
 def check_the_winner(turtle_object):
+    continue_race = True
     if turtle_object.xcor() > meta_lane:
         print(f"Turtle {turtle_object.color()[0]} won the race!")
         if user_bet == turtle_object.color()[0]:

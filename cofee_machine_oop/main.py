@@ -15,7 +15,5 @@ while coffee_machine_enabled:
     else:
         drink_ordered = machine_menu.find_drink(user_order)
         if drink_ordered is not None:
-            if coffee_machine.is_resource_sufficient(drink_ordered):
-                # ask user to make payment, if enough money paid, do the coffee
-                if money_machine.make_payment(drink_ordered.cost):
-                    coffee_machine.make_coffee(drink_ordered)
+            if coffee_machine.is_resource_sufficient(drink_ordered) and money_machine.make_payment(drink_ordered.cost):
+                coffee_machine.make_coffee(drink_ordered)
