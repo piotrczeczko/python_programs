@@ -24,6 +24,7 @@ def generate_password():
     shuffle(password_list)
     password = "".join(password_list)
     pyperclip.copy(password)
+    entry_password.delete(0, END)
     entry_password.insert(0, string=password)
     #return password
 
